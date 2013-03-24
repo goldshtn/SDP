@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Session" representedClassName="Session" syncable="YES">
+        <attribute name="abstract" attributeType="String" syncable="YES"/>
+        <attribute name="day" attributeType="String" syncable="YES"/>
+        <attribute name="dayIndex" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="number" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="prerequisites" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="slot" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="track" attributeType="String" syncable="YES"/>
+        <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="sessions" inverseEntity="Speaker" syncable="YES"/>
+    </entity>
+    <entity name="Speaker" representedClassName="Speaker" syncable="YES">
+        <attribute name="bio" attributeType="String" syncable="YES"/>
+        <attribute name="blog" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mvpProfile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="speaker" inverseEntity="Session" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Session" positionX="340" positionY="216" width="128" height="210"/>
+        <element name="Speaker" positionX="160" positionY="192" width="128" height="165"/>
+    </elements>
+</model>
